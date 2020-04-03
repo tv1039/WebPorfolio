@@ -1,0 +1,20 @@
+      @font-face {
+        font-family:'AbsoluteNeonScript';
+        font-style: normal;
+        src: url('../font/AbsoluteNeonScript-Regular.woff') format('woff');
+        src: local(※),url('../font/AbsoluteNeonScript.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family:'NEONABSOLUTESANS1Regular';
+        font-style: normal;
+        src: url('../font/NEONABSOLUTESANS1Regular.woff') format('woff');
+        src: local(※),url('../font/NEON ABSOLUTE SANS1.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family:'digital-7 (mono)';
+        font-style: normal;
+        src: url('../font/digital-7 (mono).woff') format('woff');
+        src: local(※),url('../font/digital-7 (mono).woff2') format('woff2');
+      }

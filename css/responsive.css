@@ -1,0 +1,421 @@
+@charset "utf-8";
+body {
+    font-family: 'Noto Sans KR', 'Times New Roman', Times, 'digital-7 (mono)', sans-serif;
+    overflow-x: hidden;
+}
+
+
+@media(max-width:1336px) {
+    #header {
+        width: 680px;
+    }
+    #nav ul li {
+        height: 100px;
+    }
+    #nav ul li a {
+        font-size: 120px;
+    }
+    #nav ul li a span {
+        text-shadow: none;
+        animation: light 2s ease forwards;
+    }
+    /* 처음 섹션 */
+    #section__1 {
+        width: 100%;
+    }
+    #section__1 .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    #section__1 .container .text_area h1 {
+        font-size: 30px;
+    }
+    #section__1 .container .text_area p {
+        font-size: 30px;
+        margin-left: 394px;
+    }
+    /* 섹션2 */
+    #section__2 {
+        width: 100%;
+    }
+    #section__2 .container .profile_photo {
+        width: 50%;
+    }
+    #section__2 .container .information {
+        width: 40%;
+        margin-left: 0;
+    }
+    #section__2 .container .cursor {
+        border: none;
+        background: none;
+    }
+    #section__2 .container #cursor2.hover,
+    #cursor3.hover {
+        transform: scale(20) translateX(5%) translateY(-5%);
+        border: none;
+        mix-blend-mode: difference;
+    }
+    /* 섹션3 */
+    #section__3 {
+        width: 100%;
+        height: 100vh;
+        background: #0f0f0c;
+    }
+    #section__3 .container .information {
+        width: 493px;
+    }
+}
+
+
+@media(max-width:1024px) {
+    .side_btn {
+        opacity: 0;
+    }
+    #header {
+        width: 100%;
+        position: fixed;
+        height: auto;
+    }
+    #header .row {
+        padding: 0 20px;
+    }
+    #nav {
+        width: 100%;
+        height: 60px;
+        background: #0f0f0c;
+    }
+    #nav ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 21px 0 0;
+        transform: none;
+    }
+    #nav ul li:first-child {
+        padding-top: 0;
+    }
+    #nav ul li {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0 10px;
+    }
+    #nav ul li a {
+        width: 100%;
+        height: auto;
+        font-family: 'NEONABSOLUTESANS1Regular';
+        font-size: 36px;
+        text-align: center;
+    }
+    /* 처음 섹션 */
+    #section__1 {
+        width: 100%;
+        height: 900px;
+        background: #0f0f0c;
+    }
+    #section__1 .container .contents {
+        float: none;
+        position: static;
+    }
+    #section__1 .container.on .contents .main_bg {
+        width: 400px;
+        left: 50%;
+        height: 366px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: -89px;
+        background: url('../images/bg/responsive_main2.jpg.') center center no-repeat;
+        background-size: cover;
+        text-indent: -9999px;
+        transition: none;
+        filter: blur(1px);
+    }
+    #section__1 .container .contents .main_bg.on {
+        background: url('../images/bg/responsive_main3.jpg');
+        background-size: cover;
+    }
+    #section__1 .container .contents .logo_svg {
+        left: 25%;
+    }
+    #section__1 .container .contents .text_area {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        margin-top: 176px;
+    }
+    #section__1 .container .contents .text_area h1 {
+        margin: 0 0 20px;
+        font-size: 40px;
+        opacity: 0;
+    }
+    #section__1 .container .contents .text_area p {
+        margin: 0;
+    }
+    #section__1 .container .contents #clock {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        margin-right: -441px;
+        margin-top: -130px;
+        font-family: 'digital-7 (mono)';
+        font-size: 82px;
+        transform: rotate(90deg);
+    }
+    /* 섹션2 */
+    #section__2 {
+        width: 100%;
+        height: 900px;
+    }
+    #section__2 .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    #section__2 .container h1 {
+        width: 100%;
+        font-size: 80px;
+        text-align: center;
+    }
+    #section__2 .container > div {
+        display: inline-block;
+    }
+    #section__2 .container .profile_photo {
+        width: 50%;
+        float: left;
+    }
+    #section__2 .container .profile_photo .photo_back {
+        margin: 88px 0 0;
+        width: 500px;
+        height: 500px;
+        left: -33px;
+        top: 67px;
+    }
+    #section__2 .container .profile_photo .photo {
+        position: absolute;
+        left: 0;
+        top: -10px;
+        width: 100%;
+        height: 858px;
+    }
+    #section__2 .container .information {
+        width: 45%;
+        float: left;
+        margin: 103px 0 0 5%;
+    }
+    #section__2 .container .information .info_inner {
+        width: 100%;
+        height: 371px;
+        position: relative;
+    }
+    #section__2 .container .information .info_inner .lang {
+        top: 35px;
+        width: 100%;
+    }
+    #section__2 .container .information .info_inner .lang p {
+        line-height: 25px;
+        margin-bottom: 20px
+    }
+    #section__2 .container .information .info_inner .lang p span {
+        font-size: 20px;
+    }
+    #section__2 .container .information .info_inner .eng_lang p {
+        font-size: 18px;
+        letter-spacing: -1px;
+    }
+    #section__2 .container .information .career {
+        margin: 0
+    }
+    #section__2 .container .information .career span {
+        font-size: 15px;
+    }
+    #section__2 .container .information .career .career_tit {
+        font-size: 20px;
+    }
+    #section__2 .container .information .skill .skill_tit {
+        font-size: 20px;
+    }
+    #section__2 .container .information .skill ul {
+        margin-top: 20px;
+    }
+    /* 마우스 이벤트 */
+    #section__2 .container .cursor2.hover,
+    .cursor3.hover {
+        transform: scale(15) translateX(5%) translateY(-5%);
+    }
+    /* 섹션3 */
+    #section__3 {
+        width: 100%;
+        height: 900px;
+    }
+    #section__3 .container {
+        padding: 0;
+    }
+    #section__3 .container > div {
+        display: inline-block;
+    }
+    #section__3 h1 {
+        width: 100%;
+        font-size: 80px;
+        text-align: center;
+    }
+    #section__3 .container .information {
+        width: 45%;
+        margin: 50px 0 0 5%;
+    }
+    #section__3 .container .information .info_inner li {
+        margin-bottom: 20px;
+    }
+    #section__3 .container .information .info_inner li h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    #section__3 .container .information .info_inner li p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    #section__3 .container .send_me {
+        width: 45%;
+    }
+    #section__3 .container .send_me h2 {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    #section__3 .container .send_me .mail {
+        margin: 26px 0 0;
+        width: 100%;
+    }
+    #section__3 .container .send_me .mail label {
+        font-size: 20px;
+        display: block;
+    }
+    #section__3 .container .send_me button {
+        width: 202px;
+    }
+}
+
+
+@media(max-width: 700px) {
+    /* 헤더 */
+    #nav .row {
+        padding: 0;
+    }
+    #nav ul li a {
+        font-family: 'Noto Sans KR';
+        font-size: 16px;
+    }
+    /* 처음 섹션 */
+    #section__1 {
+        height: 650px;
+    }
+    #section__1 .container .contents #clock {
+        display: none;
+    }
+    #section__1 .container.on .contents .main_bg {
+        width: 328px;
+        height: 300px;
+        background: url('../images/bg/responsive_main2.jpg') center center no-repeat;
+        background-size: cover;
+    }
+    #section__1 .container .contents .main_bg.on {
+        background: url('../images/bg/responsive_main3.jpg') center center no-repeat;
+        background-size: cover;
+    }
+    #section__1 .container .contents .text_area {
+        margin: 128px 0 0 5px;
+    }
+    #section__1 .container .contents .text_area h1 {
+        font-size: 25px;
+    }
+    #section__1 .container .contents .text_area p {
+        font-size: 30px;
+    }
+    /* 섹션2 */
+    #section__2 {
+        width: 100%;
+        height: 973px;
+    }
+    #section__2 h1 {
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+        padding: 40px 0 0;
+    }
+    #section__2 .container > div {
+        display: block;
+    }
+    #section__2 .container .profile_photo {
+        width: 100%;
+        height: 369px;
+        float: none;
+    }
+    #section__2 .container .profile_photo .photo_back {
+        width: 300px;
+        height: 300px;
+        left: 15%;
+        top: 0;
+        margin: 50px 0 0;
+    }
+    #section__2 .container .profile_photo .photo {
+        width: 323px;
+        height: 430px;
+        left: 20%;
+    }
+    #section__2 .container .information {
+        width: 100%;
+        float: none;
+        text-align: center;
+        margin: 0;
+    }
+    #section__2 .container .information .info_inner .lang p span {
+        font-size: 18px;
+    }
+    #section__2 .container .information .info_inner .eng_lang p {
+        font-size: 15px;
+        letter-spacing: -1px;
+    }
+    #section__2 .container .information .career {
+        width: 50%;
+        float: left;
+    }
+    #section__2 .container .information .skill {
+        width: 50%;
+        float: left;
+    }
+    #section__2 .container .information .career span {
+        font-size: 9px;
+    }
+    #section__2 .container .information .career .career_tit {
+        font-size: 12px;
+    }
+    #section__2 .container .information .skill .skill_tit {
+        font-size: 12px;
+    }
+    #section__2 .container .information .skill ul li {
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+    }
+    /* 섹션3 */
+    #section__3 {
+        width: 100%;
+    }
+    #section__3 .container {
+        padding: 0;
+    }
+    #section__3 .container > div {
+        display: inline-block;
+    }
+    #section__3 h1 {
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+    }
+    #section__3 .container .send_me .mail label .input_text {
+        width: 220px;
+    }
+}
