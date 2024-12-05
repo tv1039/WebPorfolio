@@ -1,0 +1,124 @@
+/* 모바일 레이아웃 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .grid {
+        display: block;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    #section0 {
+        padding-top: 6vw;
+    }
+
+    #section0 .bio {
+        margin: 0;
+    }
+
+    #section0 .bio h3 {
+        font-size: 4vw;
+    }
+
+    #section0 .bio p {
+        font-size: 3vw;
+    }
+
+    #section0 .footer {
+        width: 100%;
+        display: block;
+    }
+
+    .skills h4 {
+        font-size: 4vw;
+    }
+
+    .category h5 {
+        font-size: 3.5vw;
+    }
+
+    .tech-stack li {
+        font-size: 2.5vw;
+        padding: 1.5vw;
+    }
+
+    #section1 .portfolio-item {
+        width: 100%;
+    }
+
+    #section2 {
+        font-size: 3vw;
+    }
+
+    #section2 .container {
+        margin-top: 15vw;
+    }
+
+    #section2 .title h2 {
+        font-size: 5vw;
+    }
+
+    #section2 .experience-title {
+        font-size: 3vw;
+    }
+
+    #section2 .experience-period {
+        font-size: 2.3vw;
+    }
+
+    #section2 .details p {
+        font-size: 2.3vw;
+    }
+
+    #section2 .contect-text {
+        font-size: 3vw;
+    }
+
+    #section2 span {
+        font-size: 2.5vw;
+    }
+
+    #section2 .send-btn {
+        font-size: 3vw;
+    }
+
+    #section2 .footer {
+        display: none;
+    }
+
+    .send-btn {
+        padding: 2vw;
+    }
+
+    .github-link {
+        font-size: 2rem;
+    }
+    .logo h1 {
+        font-size: 3vw;
+    }
+
+    .hamburger.active i {
+        color: #242424;
+    }
+
+    .hamburger.active .fa-times {
+        color: white;
+    }
+
+    .load-btn {
+        padding: 2vw;
+        margin-top: 10px;
+    }
+
+    .swiper-slide .portfolio-item {
+        padding: 0;
+    }
+}

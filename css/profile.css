@@ -1,0 +1,82 @@
+/* Profile 섹션 */
+#section0 {
+    background-color: #242424;
+    color: white;
+}
+
+#section0 .footer {
+    display: none;
+    text-align: center;
+    color: white;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bio {
+    margin: 50px 0;
+}
+
+.bio h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.bio-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.bio-detail {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.skills {
+    width: 100%;
+}
+
+.skills .category img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.skills h4 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category h5 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tech-stack li {
+    background-color: rgba(220, 210, 165, 0.2);
+    border: 1px solid rgba(220, 210, 165, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.tech-stack li i {
+    margin-right: 8px;
+}
+

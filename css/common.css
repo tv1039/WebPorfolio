@@ -1,0 +1,368 @@
+@import url('profile.css');
+@import url('portfolio.css');
+@import url('contact.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body,
+html {
+    background-color: #242424;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+
+:lang(ko) {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.section {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
+/* 네비게이션 바 스타일 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    position: relative;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #DCD2A5;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* 섹션별 헤더 스타일 */
+header.profile {
+    color: white;
+}
+
+header.profile .logo h1,
+header.profile nav ul li a {
+    color: white;
+}
+
+header.portfolio {
+    color: #242424;
+}
+
+header.portfolio .logo h1,
+header.portfolio nav ul li a {
+    color: #242424;
+}
+
+header.contact {
+    color: #242424;
+}
+
+header.contact .logo h1,
+header.contact nav ul li a {
+    color: #242424;
+}
+
+/* 네비게이션 아이템 호버 스타일 */
+header nav ul li a.hover::after {
+    width: 100%;
+}
+
+/* 햄버거 버튼 및 모바일 메뉴 스타일링 */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 2rem;
+    color: white;
+}
+
+.hamburger .fa-times {
+    display: none;
+}
+
+.hamburger.active .fa-bars {
+    display: none;
+}
+
+.hamburger.active .fa-times {
+    display: block;
+}
+
+/* 모바일 메뉴 기본 스타일 */
+.mobile-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    right: -100%;
+    width: 40%;
+    height: 93%;
+    background-color: #242424;
+    transition: right 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* 모바일 메뉴 - 포트폴리오 및 컨택트 섹션 스타일 */
+header.portfolio .mobile-menu,
+header.contact .mobile-menu {
+    background-color: #fff;
+}
+
+header.portfolio .mobile-menu ul li a,
+header.contact .mobile-menu ul li a {
+    color: #ff6347;
+}
+
+
+/* 클론 포트폴리오 팝업 */
+/* 팝업 전체 스타일 */
+#additionalProjects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* 팝업 콘텐츠 스타일 */
+.popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    /* 팝업 콘텐츠의 최대 너비 */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #DCD2A5;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+    padding: 5px;
+}
+
+/* Swiper 슬라이드 */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide .portfolio-item {
+    width: 100%;
+}
+
+.swiper-slide .portfolio-item .portfolio-text {
+    height: 25%;
+}
+
+
+/* 네비게이션 버튼 */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: #DCD2A5;
+    border: 2px solid #DCD2A5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.swiper-button-prev {
+    top: 70px;
+    left: calc(50% - 150px);
+}
+
+.swiper-button-next {
+    top: 70px;
+    right: calc(50% - 150px);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #DCD2A5;
+    color: white;
+}
+
+
+/* 페이지네이션 */
+.swiper-pagination {
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #bdbdbb;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #DCD2A5;
+    opacity: 1;
+    transform: scale(1.2);
+}

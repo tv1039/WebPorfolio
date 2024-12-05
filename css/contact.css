@@ -1,0 +1,158 @@
+/* Contact 섹션 */
+#section2 {
+    background-color: #fff;
+    color: #242424;
+}
+
+#section2 .container {
+    margin-top: 30px;
+}
+
+/* 그리드 스타일 */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.left-item,
+.right-item {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.grid-item.text {
+    word-wrap: break-word;
+}
+
+.grid-item h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item .experience-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.experience-item .experience-period {
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+}
+
+.experience-item p,
+.experience-item .details p {
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.grid-item .contect-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.grid-item span {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.grid-item .mail-button {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.mail-button {
+    margin-right: 10px;
+}
+
+.send-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #DCD2A5;
+    text-decoration: none;
+    border-radius: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.send-btn::before,
+.send-btn::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border: 4px solid #DCD2A5;
+    transition: all 0.2s ease;
+}
+
+.send-btn::before {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+}
+
+.send-btn::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+}
+
+.send-btn:hover {
+    border-radius: 0px;
+    background-color: white;
+    color: #DCD2A5;
+    transform: scale(1.08);
+    font-weight: 600;
+}
+
+.send-btn:hover::before {
+    width: 100%;
+    height: 100%;
+    transition-delay: 0.2s;
+}
+
+.send-btn:hover::after {
+    width: 100%;
+    height: 100%;
+    transition-delay: 0.3s;
+}
+
+.github-icon {
+    display: block;
+}
+
+.github-link {
+    color: #242424;
+    font-size: 3rem;
+}
+
+.footer {
+    text-align: left;
+    color: #404040;
+    margin-top: 30px;
+}
+
+.footer .footer-text {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.footer .copyright {
+    font-size: 0.6rem;
+}
