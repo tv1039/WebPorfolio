@@ -101,8 +101,8 @@
     .github-link {
         font-size: 2rem;
     }
-    .logo h1 {
-        font-size: 3vw;
+    .logo img{
+        width: 80%;
     }
 
     .hamburger.active i {

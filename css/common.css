@@ -59,11 +59,6 @@ header .container {
     justify-content: space-between;
 }
 
-header .logo {
-    display: inline-block;
-    font-size: 2rem;
-}
-
 header nav {
     display: flex;
     justify-content: flex-end;
