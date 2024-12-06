@@ -121,7 +121,6 @@ header.profile {
     color: white;
 }
 
-header.profile .logo h1,
 header.profile nav ul li a {
     color: white;
 }
@@ -130,7 +129,6 @@ header.portfolio {
     color: #242424;
 }
 
-header.portfolio .logo h1,
 header.portfolio nav ul li a {
     color: #242424;
 }
@@ -139,7 +137,6 @@ header.contact {
     color: #242424;
 }
 
-header.contact .logo h1,
 header.contact nav ul li a {
     color: #242424;
 }
