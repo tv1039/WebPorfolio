@@ -1,6 +1,11 @@
-/* 모바일 레이아웃 */
+/* 모바일 레이아웃 (최대 768px) */
 @media (max-width: 768px) {
-    .hamburger {
+    body,
+    html {
+        font-size: 0.8rem; 
+    }
+
+    .mobile-menu-btn {
         display: block;
     }
 
@@ -17,108 +22,85 @@
     }
 
     #section0 {
-        padding-top: 6vw;
+        padding-top: 15px;
     }
 
-    #section0 .bio {
-        margin: 0;
+    #section0 h1 {
+        font-size: 1.3rem;
     }
 
-    #section0 .bio h3 {
-        font-size: 4vw;
+    #section0 p {
+        font-size: 1.1rem;
     }
 
-    #section0 .bio p {
-        font-size: 3vw;
+    .bio p {
+        font-size: 1rem;
     }
 
-    #section0 .footer {
-        width: 100%;
-        display: block;
-    }
-
-    .skills h4 {
-        font-size: 4vw;
-    }
-
-    .category h5 {
-        font-size: 3.5vw;
-    }
-
-    .tech-stack li {
-        font-size: 2.5vw;
-        padding: 1.5vw;
-    }
-
-    #section1 .portfolio-item {
-        width: 100%;
-    }
-
-    #section2 {
-        font-size: 3vw;
-    }
-
-    #section2 .container {
-        margin-top: 15vw;
-    }
-
-    #section2 .title h2 {
-        font-size: 5vw;
-    }
-
-    #section2 .experience-title {
-        font-size: 3vw;
-    }
-
-    #section2 .experience-period {
-        font-size: 2.3vw;
-    }
-
-    #section2 .details p {
-        font-size: 2.3vw;
-    }
-
-    #section2 .contect-text {
-        font-size: 3vw;
-    }
-
-    #section2 span {
-        font-size: 2.5vw;
-    }
-
-    #section2 .send-btn {
-        font-size: 3vw;
-    }
-
-    #section2 .footer {
-        display: none;
-    }
-
-    .send-btn {
-        padding: 2vw;
-    }
-
-    .github-link {
-        font-size: 2rem;
-    }
-    .logo img{
+    .logo img {
         width: 70%;
     }
 
-    .hamburger.active i {
-        color: #242424;
+    .skills {
+        display: block;
     }
 
-    .hamburger.active .fa-times {
-        color: white;
+    .skills img {
+        width: 40px;
+    }
+
+    .skills .skills-description {
+        width: 100%;
+        padding: 0;
     }
 
     .load-btn {
-        padding: 2vw;
-        margin-top: 10px;
+        display: none;
     }
 
-    .swiper-slide .portfolio-item {
-        padding: 0;
+    #additionalProjects {
+        display: grid !important;
+        gap: 30px;
+    }
+
+    .clone-projects-title {
+        display: block !important;
+    }
+
+    .hidden {
+        display: block;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    body,
+    html {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 10px; /* padding을 더 줄여보세요 */
+    }
+
+    .load-btn {
+        display: none;
+    }
+
+    .logo img {
+        width: 55%; /* 이미지 크기를 줄입니다 */
+    }
+
+    .skills img {
+        width: 40px; /* 이미지 크기를 더 줄입니다 */
+    }
+
+    #additionalProjects {
+        display: grid !important;
+        gap: 10px; /* 간격을 더 줄입니다 */
+    }
+
+    .hidden {
+        display: block;
     }
 }

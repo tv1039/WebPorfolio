@@ -1,82 +1,126 @@
-/* Profile 섹션 */
+/* Profile 섹션 스타일 */
 #section0 {
-    background-color: #242424;
+    background-color: #1a1a1a;
     color: white;
 }
 
-#section0 .footer {
-    display: none;
-    text-align: center;
-    color: white;
-}
-
-.profile {
+/* 프로필 컨테이너 */
+article.profile {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+/* 자기소개 영역 */
 .bio {
-    margin: 50px 0;
+    text-align: left;
+    margin-bottom: 50px;
 }
 
-.bio h3 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    font-weight: 600;
+.bio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
 .bio-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #DCD2A5;
     margin-bottom: 30px;
 }
 
 .bio-detail {
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
+.profile-photo img{
+    width: 50px;
+}
+
+
+/* 스킬 섹션 */
 .skills {
-    width: 100%;
+    display: flex;
+    gap: 50px;
 }
 
-.skills .category img {
-    width: 25px;
-    margin-right: 10px;
+.skills-container h2 {
+    color: #DCD2A5;
+    margin-bottom: 8px;
 }
 
-.skills h4 {
-    font-size: 1.8rem;
+.skills-container .skills-info {
+    display: block;
+    font-size: 12px;
     margin-bottom: 30px;
 }
 
 .category {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.category h5 {
+.category h3 {
     font-size: 1.2rem;
+    color: white;
     margin-bottom: 20px;
 }
 
+/* 스택 영역 그리드 */
 .tech-stack {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .tech-stack li {
-    background-color: rgba(220, 210, 165, 0.2);
-    border: 1px solid rgba(220, 210, 165, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 12px;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
-.tech-stack li i {
-    margin-right: 8px;
+.tech-stack img {
+    width: 50px;
+    transition: transform 0.3s ease;
 }
 
+.tech-stack img:hover {
+    transform: scale(1.1);
+}
+
+.tech-stack span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 40px;
+}
+
+.tech-stack img:hover + span {
+    opacity: 1; 
+}
+
+
+.skills-description {
+    width: 260px;
+    padding: 80px 0;
+}
+
+.skills-description .skill-desciption-text {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: #DCD2A5;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.skills-description .skill-desciption-text.show {
+    opacity: 1;
+    transform: translateY(0); 
+}

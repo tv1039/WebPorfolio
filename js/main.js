@@ -3,38 +3,46 @@ document.addEventListener("DOMContentLoaded", function () {
   new fullpage("#fullpage", {
     autoScrolling: true,
     scrollHorizontally: false,
+    navigation: true,
+    navigationPosition: "right",
+    showActiveTooltip: true,
     anchors: ["profile", "portfolio", "contact"],
     navigationTooltips: ["Profile", "Portfolio", "Contact"],
-    menu: "nav ul", // 헤더 네비게이션과 연결
+    menu: "nav ul",
+    scrollingSpeed: 700,
+    fitToSection: true,
+    responsiveWidth: 1366,
+    responsiveHeight: 768,
     afterLoad: function (origin, destination, direction) {
       const header = document.querySelector("header");
       const mobileMenu = document.querySelector(".mobile-menu");
+      const fpNav = document.getElementById("fp-nav");
 
-      // 현재 섹션에 따른 헤더 스타일 변경
+      // 현재 섹션에 따른 헤더와 네비게이션 스타일 변경
       header.classList.remove("profile", "portfolio", "contact");
       if (
         destination.anchor === "portfolio" ||
         destination.anchor === "contact"
       ) {
         header.classList.add(destination.anchor);
-        document
-          .querySelectorAll(".hamburger i")
-          .forEach((icon) => (icon.style.color = "#242424"));
         mobileMenu.style.backgroundColor = "white";
         document
           .querySelectorAll(".mobile-menu ul li a")
           .forEach((item) => (item.style.color = "#DCD2A5"));
         mobileMenu.style.backgroundColor = "white";
+
+        // portfolio나 contact 섹션에서의 도트 네비게이션 스타일
+        fpNav.classList.add("dark-section");
       } else {
         header.classList.add("profile");
-        document
-          .querySelectorAll(".hamburger i")
-          .forEach((icon) => (icon.style.color = "white"));
-          mobileMenu.style.backgroundColor = "#242424";
+        mobileMenu.style.backgroundColor = "#1a1a1a";
         document
           .querySelectorAll(".mobile-menu ul li a")
           .forEach((item) => (item.style.color = "white"));
-        mobileMenu.style.backgroundColor = "#242424";
+        mobileMenu.style.backgroundColor = "#1a1a1a";
+
+        // profile 섹션에서의 도트 네비게이션 스타일
+        fpNav.classList.remove("dark-section");
       }
 
       // 포트폴리오 섹션에서 아이템이 나타나는 효과
@@ -48,36 +56,93 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      // 포트폴리오 섹션이 아닌 경우 팝업 닫기 및 스와이퍼 초기화
-      if (destination.anchor !== "portfolio") {
-        const additionalProjects =
-          document.getElementById("additionalProjects");
-        if (additionalProjects.style.display === "flex") {
-          additionalProjects.classList.add("hidden");
-          additionalProjects.style.display = "none";
-          if (swiperInstance) {
-            swiperInstance.destroy(true, true); // 스와이퍼 완전히 제거
-            swiperInstance = null; // 스와이퍼 인스턴스 초기화
-          }
-        }
+      // 포트폴리오 섹션이고 클론 프로젝트가 열려있을 때만 헤더 숨기기
+      if (
+        destination.anchor === "portfolio" &&
+        additionalProjects.classList.contains("show")
+      ) {
+        header.style.opacity = "0";
+        setTimeout(() => {
+          header.style.visibility = "hidden";
+        }, 300);
+      } else {
+        // 다른 섹션이거나 클론 프로젝트가 닫혀있으면 헤더 보이기
+        header.style.visibility = "visible";
+        setTimeout(() => {
+          header.style.opacity = "1";
+        }, 10);
       }
     },
   });
 
-  const hamburger = document.querySelector(".hamburger");
+  document.querySelectorAll(".skill-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+      const skillName = this.getAttribute("data-skill"); // data-skill 속성에서 기술 이름을 가져옴
+      const desciptionContainer = document.querySelector(
+        ".skill-desciption-text"
+      );
+      desciptionContainer.classList.remove("show"); 
+
+      setTimeout(() => {
+        // 새 기술에 대한 정보를 업데이트합니다.
+        desciptionContainer.innerHTML = `${skillName}`;
+        desciptionContainer.classList.add("show");
+      }, 650);
+    });
+  });
+
+  // 포트폴리오 섹션 더보기 페이지
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const additionalProjects = document.getElementById("additionalProjects");
+  const cloneProjectsTitle = document.querySelector(
+    ".clone-projects-title.hidden"
+  );
+  const header = document.querySelector("header");
+
+  loadMoreBtn.addEventListener("click", function () {
+    additionalProjects.classList.toggle("hidden");
+    cloneProjectsTitle.classList.toggle("hidden");
+    additionalProjects.classList.toggle("show");
+
+    // 포트폴리오 섹션에서만 헤더 토글
+    if (fullpage_api.getActiveSection().anchor === "portfolio") {
+      if (additionalProjects.classList.contains("show")) {
+        loadMoreBtn.textContent = "Remove";
+        loadMoreBtn.setAttribute("aria-expanded", "true");
+        fullpage_api.setAutoScrolling(false);
+        cloneProjectsTitle.scrollIntoView({ behavior: "smooth" });
+        // 헤더 숨기기
+        header.style.opacity = "0";
+        setTimeout(() => {
+          header.style.visibility = "hidden";
+        }, 300);
+      } else {
+        loadMoreBtn.textContent = "Load More";
+        loadMoreBtn.setAttribute("aria-expanded", "false");
+        fullpage_api.setAutoScrolling(true);
+        // 헤더 보이기
+        header.style.visibility = "visible";
+        setTimeout(() => {
+          header.style.opacity = "1";
+        }, 10);
+      }
+    }
+  });
+
+  const menuBtn = document.querySelector(".mobile-menu-btn");
   const mobileMenu = document.querySelector(".mobile-menu");
 
   // 햄버거 버튼 클릭 시 모바일 메뉴 토글
-  hamburger.addEventListener("click", function () {
+  menuBtn.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
-    hamburger.classList.toggle("active");
+    menuBtn.classList.toggle("active");
   });
 
   // 창 크기 변경 시 모바일 메뉴 숨기기
   window.addEventListener("resize", function () {
     if (window.innerWidth > 768) {
       mobileMenu.classList.remove("active");
-      hamburger.classList.remove("active");
+      menuBtn.classList.remove("active");
     }
   });
 
@@ -85,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".mobile-menu ul li a").forEach((item) => {
     item.addEventListener("click", function () {
       mobileMenu.classList.remove("active");
-      hamburger.classList.remove("active");
+      menuBtn.classList.remove("active");
     });
   });
 
@@ -97,61 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
     item.addEventListener("mouseleave", function () {
       item.classList.remove("hover");
     });
-  });
-
-  // 프로젝트 팝업창
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
-  const additionalProjects = document.getElementById("additionalProjects");
-  const closeBtn = document.querySelector(".close-btn");
-  let swiperInstance = null;
-
-  // 팝업 열기
-  loadMoreBtn.addEventListener("click", function () {
-    additionalProjects.classList.remove("hidden");
-    additionalProjects.style.display = "flex"; // 팝업 표시
-
-    // Swiper 초기화
-    if (!swiperInstance) {
-      swiperInstance = new Swiper(".swiper-container", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        slidesPerView: 1, // 기본 슬라이드 수
-        loop: true,
-        breakpoints: {
-          // 768px 이하의 화면에서는 1개의 슬라이드만 보이도록 설정
-          768: {
-            slidesPerView: 3,
-          },
-        },
-      });
-    }
-  });
-
-  // 팝업 닫기
-  closeBtn.addEventListener("click", function () {
-    additionalProjects.classList.add("hidden");
-    additionalProjects.style.display = "none";
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true); // 스와이퍼 완전히 제거
-      swiperInstance = null; // 스와이퍼 인스턴스 초기화
-    }
-  });
-
-  // 팝업 바깥 영역 클릭 시 닫기
-  additionalProjects.addEventListener("click", function (event) {
-    if (event.target === additionalProjects) {
-      additionalProjects.classList.add("hidden");
-      additionalProjects.style.display = "none";
-      if (swiperInstance) {
-        swiperInstance.destroy(true, true); // 스와이퍼 완전히 제거
-        swiperInstance = null; // 스와이퍼 인스턴스 초기화
-      }
-    }
   });
 });
