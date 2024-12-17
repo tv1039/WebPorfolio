@@ -27,6 +27,9 @@ section {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    padding: 20px;
+    
+    
 }
 
 /* 헤더 스타일 */
@@ -105,10 +108,6 @@ h3 {
     font-weight: 600;
 }
 
-p {
-    font-size: 1rem;
-}
-
 /* 섹션별 헤더 스타일 */
 header.profile {
     color: white;
@@ -137,8 +136,8 @@ header.contact nav ul li a {
 /* 모바일 메뉴 타일 */
 .mobile-menu-btn{
     display: none;
-    width: 40px;
-    height: 28px;
+    width: 30px;
+    height: 20px;
     background: none;
     position: relative;
     z-index: 1000;

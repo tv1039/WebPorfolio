@@ -19,7 +19,7 @@ article.profile {
 
 .bio h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin: 20px 0;
     font-weight: normal;
 }
 
@@ -107,13 +107,13 @@ article.profile {
 
 
 .skills-description {
-    width: 260px;
+    width: 560px;
     padding: 80px 0;
 }
 
 .skills-description .skill-desciption-text {
     line-height: 1.5;
-    font-size: 1.2rem;
+    font-size: 17px;
     color: #DCD2A5;
     opacity: 0;
     transform: translateY(20px);

@@ -18,25 +18,17 @@
         display: block;
     }
 
-    .section .container {
-        padding: 0;
-    }
-
-    #section0 {
-        padding: 60px 30px;
-    }
-
-    #section0 h1 {
+    #section0 #profile-title {
         font-size: 1.5rem;
     }
 
-    #section0 p {
+    #section0 .bio-subtitle {
         font-size: 1.2rem;
     }
 
-    /* .bio p {
+    #section0 .bio-detail {
         font-size: 1rem;
-    }  */
+    }
 
     .logo img {
         width: 70%;
@@ -53,6 +45,10 @@
     .skills .skills-description {
         width: 100%;
         padding: 0;
+    }
+
+    .skills-description .skill-desciption-text {
+        font-size: 14px;
     }
 
     .load-btn {
