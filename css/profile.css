@@ -1,7 +1,11 @@
-/* Profile 섹션 스타일 */
+body {
+    cursor: none;
+}
+
 #section0 {
     background-color: #1a1a1a;
     color: white;
+    cursor: none;
 }
 
 /* 프로필 컨테이너 */
@@ -9,12 +13,18 @@ article.profile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative; 
+    height: 250px;
 }
 
 /* 자기소개 영역 */
 .bio {
     text-align: left;
-    margin-bottom: 50px;
+    position: absolute; 
+    top: 0;
+    left: 0%;
+    transition: opacity 0.3s ease-in-out;
+    margin-bottom: 30px;
 }
 
 .bio h1 {
@@ -34,15 +44,15 @@ article.profile {
     line-height: 1.8;
 }
 
-.profile-photo img{
+.profile-photo img {
     width: 50px;
 }
-
 
 /* 스킬 섹션 */
 .skills {
     display: flex;
     gap: 50px;
+    margin-top: 30px;
 }
 
 .skills-container h2 {
@@ -101,13 +111,12 @@ article.profile {
     margin-top: 40px;
 }
 
-.tech-stack img:hover + span {
-    opacity: 1; 
+.tech-stack img:hover+span {
+    opacity: 1;
 }
 
-
 .skills-description {
-    width: 560px;
+    width: 575px;
     padding: 80px 0;
 }
 
@@ -117,10 +126,61 @@ article.profile {
     color: #DCD2A5;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease; 
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .skills-description .skill-desciption-text.show {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
+}
+
+/* 마우스 이벤트 */
+.cursor {
+    position: fixed;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    transition: transform 0.1s ease;
+}
+
+#cursor1 {
+    background-color: #fff;
+    height: 0;
+    width: 0;
+    z-index: 99;
+}
+
+#cursor2,
+#cursor3 {
+    width: 30px;
+    height: 30px;
+    z-index: 99;
+    transition: transform 0.1s ease;
+}
+
+#cursor2 {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+#cursor2.hover {
+    background: #fff;
+}
+
+#cursor2.hover,
+#cursor3.hover {
+    transform: scale(15) translateX(10%) translateY(-5%);
+    border: none;
+    mix-blend-mode: exclusion;
+}
+
+/* 언어 전환 텍스트 */
+.kor_lang {
+    opacity: 1;
+}
+
+.eng_lang {
+    opacity: 0;
 }

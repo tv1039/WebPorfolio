@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const desciptionContainer = document.querySelector(
         ".skill-desciption-text"
       );
-      desciptionContainer.classList.remove("show"); 
+      desciptionContainer.classList.remove("show");
 
       setTimeout(() => {
         // 새 기술에 대한 정보를 업데이트합니다.
@@ -129,13 +129,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const menuBtn = document.querySelector(".mobile-menu-btn");
-  const mobileMenu = document.querySelector(".mobile-menu");
+  //텍스트전환 마우스이벤트
+  // 커서
+  const cursor1 = document.getElementById("cursor1"),
+    cursor2 = document.getElementById("cursor2"),
+    cursor3 = document.getElementById("cursor3"),
+    korLang = document.querySelector(".kor_lang"),
+    engLang = document.querySelector(".eng_lang");
 
-  // 햄버거 버튼 클릭 시 모바일 메뉴 토글
-  menuBtn.addEventListener("click", function () {
-    mobileMenu.classList.toggle("active");
-    menuBtn.classList.toggle("active");
+  document.body.addEventListener("mousemove", function (n) {
+    cursor1.style.left = n.clientX + "px";
+    cursor1.style.top = n.clientY + "px";
+    cursor2.style.left = n.clientX + "px";
+    cursor2.style.top = n.clientY + "px";
+    cursor3.style.left = n.clientX + "px";
+    cursor3.style.top = n.clientY + "px";
+  });
+
+  function cursorHoverOn() {
+    cursor2.classList.add("hover");
+    cursor3.classList.add("hover");
+  }
+
+  function cursorHoverOff() {
+    cursor2.classList.remove("hover");
+    cursor3.classList.remove("hover");
+  }
+
+  const korLangSection = document.querySelector("article.profile");
+  korLangSection.addEventListener("mouseenter", function () {
+    cursorHoverOn();
+    korLang.style.opacity = "0";
+    engLang.style.opacity = "1";
+  });
+
+  korLangSection.addEventListener("mouseleave", function () {
+    cursorHoverOff();
+    engLang.style.opacity = "0";
+    korLang.style.opacity = "1";
   });
 
   // 창 크기 변경 시 모바일 메뉴 숨기기
