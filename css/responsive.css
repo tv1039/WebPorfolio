@@ -1,8 +1,9 @@
 /* 모바일 레이아웃 (최대 768px) */
 @media (max-width: 768px) {
+
     body,
     html {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
 
     .mobile-menu-btn {
@@ -17,25 +18,25 @@
         display: block;
     }
 
-    .container {
-        padding: 0 30px;
+    .section .container {
+        padding: 0;
     }
 
     #section0 {
-        padding-top: 15px;
+        padding: 60px 30px;
     }
 
     #section0 h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     #section0 p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
-    .bio p {
+    /* .bio p {
         font-size: 1rem;
-    }
+    }  */
 
     .logo img {
         width: 70%;
@@ -70,17 +71,22 @@
     .hidden {
         display: block;
     }
+
+    footer {
+        text-align: center;
+    }
 }
 
 
 @media (max-width: 1024px) {
+
     body,
     html {
         font-size: 0.9rem;
     }
 
     .container {
-        padding: 0 10px; /* padding을 더 줄여보세요 */
+        padding: 0 10px;
     }
 
     .load-btn {
@@ -88,16 +94,16 @@
     }
 
     .logo img {
-        width: 55%; /* 이미지 크기를 줄입니다 */
+        width: 55%;
     }
 
     .skills img {
-        width: 40px; /* 이미지 크기를 더 줄입니다 */
+        width: 40px;
     }
 
     #additionalProjects {
         display: grid !important;
-        gap: 10px; /* 간격을 더 줄입니다 */
+        gap: 10px;
     }
 
     .hidden {
