@@ -18,7 +18,6 @@
         display: block;
     }
 
-
     .cursor {
         display: none;
     }
@@ -45,6 +44,11 @@
 
     .skills img {
         width: 40px;
+    }
+
+    .tech-stack span { 
+        font-size: 14px;
+        margin-top: 30px;
     }
 
     .skills .skills-description {

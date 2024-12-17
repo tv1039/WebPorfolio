@@ -36,7 +36,7 @@ article.profile {
 .bio-subtitle {
     font-size: 1.5rem;
     color: #DCD2A5;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .bio-detail {
@@ -52,7 +52,7 @@ article.profile {
 .skills {
     display: flex;
     gap: 50px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .skills-container h2 {
