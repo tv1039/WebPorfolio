@@ -167,7 +167,7 @@ article.profile {
 
 #cursor2.hover,
 #cursor3.hover {
-    transform: scale(15) translateX(10%) translateY(-5%);
+    transform: scale(20) translateX(10%) translateY(-5%);
     border: none;
     mix-blend-mode: exclusion;
 }
