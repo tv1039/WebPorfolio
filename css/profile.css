@@ -5,7 +5,7 @@
 }
 
 /* 프로필 컨테이너 */
-article.profile {
+article.profile { 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
