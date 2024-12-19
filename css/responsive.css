@@ -18,6 +18,10 @@
         display: block;
     }
 
+    #section0 {
+        cursor: auto;
+    }
+
     #section0 h1 {
         font-size: 1.5rem;
     }

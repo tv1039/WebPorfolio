@@ -23,7 +23,7 @@ article.profile {
     margin-bottom: 30px;
 }
 
-.bio h1 {
+.bio h2 {
     font-size: 2.5rem;
     margin: 20px 0;
     font-weight: normal;
@@ -85,6 +85,7 @@ article.profile {
 .tech-stack img {
     width: 50px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .tech-stack img:hover {
