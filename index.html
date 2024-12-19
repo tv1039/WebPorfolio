@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/profile.css">
@@ -139,7 +139,7 @@
                             <span class="skills-info">*스킬 아이콘을 클릭하여 저의 숙련도를 확인해 보시기 바랍니다.</span>
                             <div class="category">
                                 <h3>Develop</h3>
-                                <ul class="tech-stack" role="list">
+                                <ul class="tech-stack">
                                     <li class="skill-item"
                                         data-skill="HTML5의 구조와 시맨틱 태그를 이용해 SEO와 웹 접근성 지침을 준수하며, 페이지의 구조를 깔끔하고 효율적으로 작성할 수 있습니다.">
                                         <img src="https://img.icons8.com/?size=100&id=VtcsWwcpT4R0&format=png&color=FFFFFF"
@@ -176,7 +176,7 @@
                             </div>
                             <div class="category">
                                 <h3>Design</h3>
-                                <ul class="tech-stack" role="list">
+                                <ul class="tech-stack">
                                     <li class="skill-item"
                                         data-skill="Photoshop을 사용하여 웹 배너, 아이콘 및 다양한 디자인 작업을 효과적으로 진행할 수 있습니다.">
                                         <img src="https://img.icons8.com/?size=100&id=DB2HfnXxMNnx&format=png&color=FFFFFF"
@@ -219,54 +219,46 @@
                     <h3>Major Projects</h3>
                     <div id="portfolioSection">
                         <!-- Main Projects -->
-                        <div id="mainProjects" class="portfolio-grid" role="list">
+                        <div id="mainProjects" class="portfolio-grid">
                             <!-- Project 1 -->
-                            <article class="portfolio-item"
-                                <a href="https://glistening-centaur-0c6543.netlify.app" target="_blank"
-                                    rel="noopener noreferrer" aria-label="신세계 백화점 프로젝트 상세보기">
+                            <article class="portfolio-item">
+                                <a href="https://glistening-centaur-0c6543.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="신세계 백화점 프로젝트 상세보기">
                                     <div class="portfolio-img">
                                         <img src="images/portfolio_img/mainslide1.png" alt="신세계 백화점 프로젝트 미리보기">
                                     </div>
                                     <div class="portfolio-text">
                                         <h4>SHINSEGEA 신세계 백화점</h4>
-                                        <p>'신세계 백화점' 웹사이트를 웹표준에 맞게 리뉴얼하여 제작한 프로젝트입니다.
-                                            네비게이션 및 페이지 환 효과를 동일하게 구현했습니다.</p>
+                                        <p>'신세계 백화점' 웹사이트를 웹표준에 맞게 리뉴얼하여 제작한 프로젝트입니다. 네비게이션 및 페이지 환 효과를 동일하게 구현했습니다.</p>
                                     </div>
                                 </a>
                             </article>
-
                             <!-- Project 2 -->
                             <article class="portfolio-item">
-                                <a href="https://inspiring-bubblegum-c5617b.netlify.app" target="_blank"
-                                    rel="noopener noreferrer" aria-label="스타럭스 프로젝트 상세보기">
+                                <a href="https://inspiring-bubblegum-c5617b.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="스타럭스 프로젝트 상세보기">
                                     <div class="portfolio-img">
                                         <img src="images/portfolio_img/mainslide2.png" alt="스타럭스 프로젝트 미리보기">
                                     </div>
                                     <div class="portfolio-text">
                                         <h4>STARLUXE 스타럭스</h4>
-                                        <p>편집샵 '스타럭스' 웹사이트를 리뉴얼한 반응형 프로젝트입니다.
-                                            웹, 테블릿, 모바일에 최적화된 디자인과 기능을 구현했습니다.</p>
+                                        <p>편집샵 '스타럭스' 웹사이트를 리뉴얼한 반응형 프로젝트입니다. 웹, 테블릿, 모바일에 최적화된 디자인과 기능을 구현했습니다.</p>
                                     </div>
                                 </a>
                             </article>
-
                             <!-- Project 3 -->
                             <article class="portfolio-item">
-                                <a href="https://jazzy-mousse-3cacbc.netlify.app" target="_blank"
-                                    rel="noopener noreferrer" aria-label="CGV 프로젝트 상세보기">
+                                <a href="https://jazzy-mousse-3cacbc.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="CGV 프로젝트 상세보기">
                                     <div class="portfolio-img">
                                         <img src="images/portfolio_img/mainslide3.png" alt="CGV 프로젝트 미리보기">
                                     </div>
                                     <div class="portfolio-text">
                                         <h4>CGV 씨지브이</h4>
-                                        <p>'CJ CGV' 웹사이트 리뉴얼 팀 프로젝트입니다.
-                                            최신 트렌드를 반영한 디자인을 적용하여 사용자 경험을 개선했습니다.</p>
+                                        <p>'CJ CGV' 웹사이트 리뉴얼 팀 프로젝트입니다. 최신 트렌드를 반영한 디자인을 적용하여 사용자 경험을 개선했습니다.</p>
                                     </div>
                                 </a>
                             </article>
                         </div>
                         <h3 class="clone-projects-title hidden">Clone Projects</h3>
-                        <div id="additionalProjects" class="portfolio-grid hidden" role="list">
+                        <div id="additionalProjects" class="portfolio-grid hidden">
 
                             <!-- Project 4 -->
                             <article class="portfolio-item">
@@ -477,7 +469,7 @@
                                 </div>
 
                                 <!-- Footer -->
-                                <footer>
+                                <footer role="contentinfo">
                                     <p class="footer-text">상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
                                     <p class="copyright">&copy; 2024 Hong_seung_pyo. All rights reserved.</p>
                                 </footer>
