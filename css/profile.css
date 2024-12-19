@@ -40,10 +40,6 @@ article.profile {
     line-height: 1.8;
 }
 
-.profile-photo img {
-    width: 50px;
-}
-
 /* 스킬 섹션 */
 .skills {
     display: flex;

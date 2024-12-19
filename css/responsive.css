@@ -18,11 +18,7 @@
         display: block;
     }
 
-    .cursor {
-        display: none;
-    }
-
-    #section0 #profile-title {
+    #section0 h1 {
         font-size: 1.5rem;
     }
 
@@ -32,6 +28,7 @@
 
     #section0 .bio-detail {
         font-size: 1rem;
+        line-height: 1.2;
     }
 
     .logo img {
@@ -46,7 +43,11 @@
         width: 40px;
     }
 
-    .tech-stack span { 
+    .category {
+        margin-bottom: 20px;
+    }
+
+    .tech-stack span {
         font-size: 14px;
         margin-top: 30px;
     }
@@ -75,6 +76,37 @@
 
     .hidden {
         display: block;
+    }
+
+
+    #cursor1 {
+        background-color: none;
+    }
+
+
+    #cursor2,
+    #cursor3 {
+        width: 0;
+        height: 0;
+        z-index: 0;
+        transition: transform none;
+    }
+
+    #cursor2 {
+        border: none;
+        opacity: 0;
+    }
+
+    #cursor2.hover {
+        background-color: none;
+    }
+
+    #cursor2.hover,
+    #cursor3.hover {
+        transform: none;
+        background: none;
+        border: none;
+        mix-blend-mode: normal;
     }
 
     footer {
